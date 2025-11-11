@@ -74,21 +74,19 @@ const TimelineSection = ({ timeline }: TimelineSectionProps) => (
           .split(/[,·|]/)
           .map((part) => part.trim())
           .filter(Boolean);
-        const [role, company] = item.title
-          .split("·")
-          .map((part) => part.trim());
-        const hasCompany = Boolean(company);
-        const roleTitle = hasCompany ? role : item.title;
-        const companyLogo = hasCompany ? companyLogos[company] : undefined;
-        const companyPalette = (hasCompany && companyPalettes[company]) || {
-          bg: "linear-gradient(135deg, var(--surface-highlight), var(--accent-soft))",
-          color: "var(--text-primary)",
-        };
-        const companyInitials = hasCompany ? getCompanyInitials(company) : "";
+        const companyName = item.company?.trim();
+        const hasCompany = Boolean(companyName);
+        const companyLogo = hasCompany ? companyLogos[companyName!] : undefined;
+        const companyPalette =
+          (hasCompany && companyPalettes[companyName!]) || {
+            bg: "linear-gradient(135deg, var(--surface-highlight), var(--accent-soft))",
+            color: "var(--text-primary)",
+          };
+        const companyInitials = hasCompany ? getCompanyInitials(companyName!) : "";
 
         return (
           <li
-            key={`${item.year}-${item.title}`}
+            key={`${item.year}-${item.role}-${companyName ?? "independent"}`}
             className="timeline-item fade-in"
             style={{ animationDelay: `${index * 0.12 + 0.1}s` }}
           >
@@ -110,20 +108,20 @@ const TimelineSection = ({ timeline }: TimelineSectionProps) => (
                           }
                     }
                     role={companyLogo ? undefined : "img"}
-                    aria-label={companyLogo ? undefined : `${company} logo`}
-                    title={company}
+                    aria-label={companyLogo ? undefined : `${companyName} logo`}
+                    title={companyName}
                   >
                     {companyLogo ? (
-                      <img src={companyLogo} alt={`${company} logo`} />
+                      <img src={companyLogo} alt={`${companyName} logo`} />
                     ) : (
                       companyInitials
                     )}
                   </span>
                 )}
                 <div>
-                  <h3>{roleTitle}</h3>
+                  <h3>{item.role}</h3>
                   {hasCompany && (
-                    <span className="timeline-company-name">{company}</span>
+                    <span className="timeline-company-name">{companyName}</span>
                   )}
                 </div>
               </div>

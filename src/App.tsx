@@ -1,4 +1,3 @@
-import { useEffect, useMemo, useState } from "react";
 import Hero from "./components/Hero";
 import ContactSection from "./components/ContactSection";
 import TimelineSection from "./components/TimelineSection";
@@ -7,37 +6,10 @@ import CommunitySection from "./components/CommunitySection";
 import { community, projects, timeline, socials } from "./data/content";
 import headshot from "./assets/headshot.jpg";
 import "./App.css";
-
-type Theme = "light" | "dark";
-const getPreferredTheme = (): Theme => {
-  if (typeof window === "undefined") {
-    return "light";
-  }
-
-  const stored = window.localStorage.getItem("portfolio-theme");
-  if (stored === "light" || stored === "dark") {
-    return stored;
-  }
-
-  return window.matchMedia("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
-};
+import { useTheme } from "./context/ThemeContext";
 
 function App() {
-  const [theme, setTheme] = useState<Theme>(() => getPreferredTheme());
-
-  useEffect(() => {
-    const root = document.documentElement;
-    root.setAttribute("data-theme", theme);
-    window.localStorage.setItem("portfolio-theme", theme);
-  }, [theme]);
-
-  const isDarkMode = useMemo(() => theme === "dark", [theme]);
-
-  const toggleTheme = () => {
-    setTheme((current) => (current === "light" ? "dark" : "light"));
-  };
+  const { isDarkMode, toggleTheme } = useTheme();
 
   return (
     <div className="app">
