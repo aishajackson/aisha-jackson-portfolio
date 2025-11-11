@@ -9,7 +9,8 @@ export type Project = {
 
 export type TimelineItem = {
   year: string;
-  title: string;
+  role: string;
+  company?: string;
   subtitle: string;
   description: ReactNode;
 };
@@ -91,62 +92,72 @@ export const community: CommunityItem[] = [
 export const timeline: TimelineItem[] = [
   {
     year: "2021 - Present",
-    title: "Senior Software Engineer · Warner Bros. Discovery",
+    role: "Senior Software Engineer",
+    company: "Warner Bros. Discovery",
     subtitle: "Media Supply Chain - HBO Max & Max",
     description: (
       <>
         Developing a new <strong>Ad Content Tracking System</strong> using{" "}
-        <strong>React</strong>, <strong>Redux</strong>, and <strong>Python</strong> to streamline
-        the receipt, management, and fulfillment of ads for linear play-out across all brands.
+        <strong>React</strong>, <strong>Redux</strong>, and{" "}
+        <strong>Python</strong> to streamline the receipt, management, and
+        fulfillment of ads for linear play-out across all brands.
       </>
     ),
   },
   {
     year: "2020 - 2021",
-    title: "Software Engineer · Nike",
+    role: "Software Engineer",
+    company: "Nike",
     subtitle: "Global Pricing - Promos & Markdowns",
     description: (
       <>
-        Developed a <strong>React</strong> and <strong>Redux</strong> markdown price optimization UI
-        enabling global retail planners to make data-driven in-season pricing decisions that maximize
-        revenue and optimize inventory flow.
+        Developed a <strong>React</strong> and <strong>Redux</strong> markdown
+        price optimization UI enabling global retail planners to make
+        data-driven in-season pricing decisions that maximize revenue and
+        optimize inventory flow.
       </>
     ),
   },
   {
     year: "2019 - 2021",
-    title: "Frontend Developer · Oregon Labs",
+    role: "Frontend Developer",
+    company: "Oregon Labs",
     subtitle: "Freelance",
     description: (
       <>
-        Contributed to multiple innovation projects using <strong>Vue.js</strong> and{" "}
-        <strong>JavaScript</strong>, developing interactive interfaces and prototypes that enhanced
-        user experience and supported rapid product experimentation.
+        Contributed to multiple innovation projects using{" "}
+        <strong>Vue.js</strong> and <strong>JavaScript</strong>, developing
+        interactive interfaces and prototypes that enhanced user experience and
+        supported rapid product experimentation.
       </>
     ),
   },
   {
     year: "2018 - 2020",
-    title: "Software Engineer · Nike",
+    role: "Software Engineer",
+    company: "Nike",
     subtitle: "Early in Career Rotation Program",
     description: (
       <>
-        Completed three Nike rotations building full-stack and data solutions using{" "}
-        <strong>AngularJS</strong>, <strong>NodeJS</strong>, <strong>Python</strong>, and{" "}
-        <strong>AWS</strong> — spanning deployment automation, ML-powered forecasting tools, and
-        backend integrations with ServiceNow and Snowflake.
+        Completed three Nike rotations building full-stack and data solutions
+        using <strong>AngularJS</strong>, <strong>NodeJS</strong>,{" "}
+        <strong>Python</strong>, and <strong>AWS</strong> — spanning deployment
+        automation, ML-powered forecasting tools, and backend integrations with
+        ServiceNow and Snowflake.
       </>
     ),
   },
   {
     year: "2017",
-    title: "Software Engineer Intern · Nike",
+    role: "Software Engineer Intern",
+    company: "Nike",
     subtitle: "Nike Zero - Employee Hub",
     description: (
       <>
-        Developed a <strong>Python</strong>-based environment duplicator for Nike Zero databases,
-        built UI enhancements with <strong>Bootstrap</strong> for a women’s coaching site, and
-        created a SharePoint site with 15 internal architecture diagrams.
+        Developed a <strong>Python</strong>-based environment duplicator for
+        Nike Zero databases, built UI enhancements with{" "}
+        <strong>Bootstrap</strong> for a women’s coaching site, and created a
+        SharePoint site with 15 internal architecture diagrams.
       </>
     ),
   },

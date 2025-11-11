@@ -1,8 +1,8 @@
 import blackGirlsCodeLogo from "../assets/black_girls_code_logo.jpeg";
 import coolGirlsLogo from "../assets/cool_girls_inc__logo.jpeg";
 import colorwaveLogo from "../assets/thecolorwave_logo.jpeg";
-
 import type { CommunityItem } from "../data/content";
+import "./CommunitySection.css";
 
 type CommunitySectionProps = {
   community: CommunityItem[];
@@ -51,8 +51,15 @@ const CommunitySection = ({ community }: CommunitySectionProps) => (
           >
             <div className="community-card-inner">
               <div className="community-card-face community-card-front">
-                <span className="community-icon has-image">
-                  <img src={logo.src} alt={logo.alt} />
+                <span
+                  className={`community-icon${logo ? " has-image" : ""}`}
+                  aria-hidden={logo ? true : undefined}
+                >
+                  {logo ? (
+                    <img src={logo.src} alt={logo.alt} />
+                  ) : (
+                    <span>{item.organization.slice(0, 2).toUpperCase()}</span>
+                  )}
                 </span>
                 <div className="community-meta">
                   <span className="community-role">{item.role}</span>
@@ -64,13 +71,6 @@ const CommunitySection = ({ community }: CommunitySectionProps) => (
               <div className="community-card-face community-card-back">
                 <div className="community-back-content">
                   <p className="community-summary">{item.summary}</p>
-                  {item.highlights && item.highlights.length > 0 && (
-                    <ul className="community-highlights">
-                      {item.highlights.map((highlight) => (
-                        <li key={highlight}>{highlight}</li>
-                      ))}
-                    </ul>
-                  )}
                   {item.link && (
                     <a
                       className="community-link"
