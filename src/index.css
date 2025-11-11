@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+  color-scheme: light;
+  font-family: 'Space Grotesk', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --bg: #f3f5ff;
+  --surface-elevated: rgba(255, 255, 255, 0.9);
+  --surface-alpha: rgba(247, 249, 255, 0.72);
+  --surface-highlight: rgba(255, 255, 255, 0.96);
+  --surface-border: rgba(31, 60, 136, 0.14);
+  --surface-border-soft: rgba(255, 255, 255, 0.55);
+  --surface-border-strong: rgba(31, 60, 136, 0.22);
+  --surface-chip: rgba(31, 60, 136, 0.12);
+  --text-primary: #18203a;
+  --text-secondary: #3e4a68;
+  --text-muted: #62708f;
+  --accent: #1f3c88;
+  --accent-strong: #3f5ad3;
+  --accent-soft: rgba(31, 60, 136, 0.18);
+  --accent-secondary: #f2b086;
+  --accent-rgb: 31, 60, 136;
+  --accent-secondary-rgb: 242, 176, 134;
+  --shadow-soft: 0 18px 40px rgba(24, 32, 58, 0.1);
+  --shadow-medium: 0 32px 70px rgba(24, 32, 58, 0.16);
+  --orb-one: rgba(31, 60, 136, 0.32);
+  --orb-two: rgba(242, 176, 134, 0.28);
+  --backdrop-gradient: radial-gradient(
+      820px circle at 14% 18%,
+      rgba(63, 90, 211, 0.2),
+      transparent 65%
+    ),
+    radial-gradient(680px circle at 86% 12%, rgba(242, 176, 134, 0.22), transparent 70%);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0b1428;
+  --surface-elevated: rgba(18, 27, 52, 0.82);
+  --surface-alpha: rgba(18, 27, 52, 0.74);
+  --surface-highlight: rgba(34, 45, 74, 0.85);
+  --surface-border: rgba(104, 134, 214, 0.3);
+  --surface-border-soft: rgba(255, 255, 255, 0.16);
+  --surface-border-strong: rgba(96, 128, 210, 0.4);
+  --surface-chip: rgba(104, 134, 214, 0.28);
+  --text-primary: #f5f7ff;
+  --text-secondary: #c8d4ff;
+  --text-muted: #9aa7d9;
+  --accent: #819bff;
+  --accent-strong: #b8c8ff;
+  --accent-soft: rgba(129, 155, 255, 0.32);
+  --accent-secondary: #f2b086;
+  --accent-rgb: 129, 155, 255;
+  --accent-secondary-rgb: 242, 176, 134;
+  --shadow-soft: 0 20px 44px rgba(4, 6, 14, 0.55);
+  --shadow-medium: 0 36px 82px rgba(4, 6, 14, 0.62);
+  --orb-one: rgba(129, 155, 255, 0.32);
+  --orb-two: rgba(242, 176, 134, 0.28);
+  --backdrop-gradient: radial-gradient(
+      880px circle at 12% 18%,
+      rgba(129, 155, 255, 0.24),
+      transparent 66%
+    ),
+    radial-gradient(720px circle at 84% 10%, rgba(242, 176, 134, 0.22), transparent 68%);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--backdrop-gradient), var(--bg);
+  color: var(--text-primary);
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  border: none;
+  background: none;
+  color: inherit;
+  padding: 0;
+}
+
+p {
+  margin: 0 0 0.8rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+::selection {
+  background: rgba(var(--accent-rgb), 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
