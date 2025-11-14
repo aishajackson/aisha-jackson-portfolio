@@ -44,7 +44,21 @@ All data (projects, community work, socials, timeline) lives in `src/data/conten
 
 ## Deployment
 
-Any static host works (Netlify, Vercel, GitHub Pages). Run `pnpm run build` and deploy the `dist/` folder. Vite already inlines assets and handles hash-based filenames.
+This portfolio is deployed to [Vercel](https://vercel.com) and automatically updates on every push to the `main` branch.
+
+**Live Site:** https://aishaajackson.com
+
+### Deploying Your Own
+
+The site can be deployed to any static host (Netlify, Vercel, GitHub Pages, etc.):
+
+1. Run `pnpm run build` to create the production bundle
+2. Deploy the `dist/` folder to your hosting provider
+
+For Vercel specifically:
+- The project includes a [`vercel.json`](vercel.json) configuration file
+- Automatic deployments are enabled via GitHub integration
+- Preview deployments are created for all pull requests
 
 ---
 
