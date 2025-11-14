@@ -1,7 +1,8 @@
-import warnerLogo from "../assets/warner_bros_discovery_logo.jpeg";
-import nikeLogo from "../assets/nike_logo.jpeg";
-import oregonLabsLogo from "../assets/oregon_labs_logo.jpeg";
-import type { TimelineItem } from "../data/content";
+import warnerLogo from "../../assets/warner_bros_discovery_logo.jpeg";
+import nikeLogo from "../../assets/nike_logo.jpeg";
+import oregonLabsLogo from "../../assets/oregon_labs_logo.jpeg";
+import type { TimelineItem } from "../../data/content";
+import "./TimelineSection.css";
 
 type TimelineSectionProps = {
   timeline: TimelineItem[];
@@ -77,12 +78,14 @@ const TimelineSection = ({ timeline }: TimelineSectionProps) => (
         const companyName = item.company?.trim();
         const hasCompany = Boolean(companyName);
         const companyLogo = hasCompany ? companyLogos[companyName!] : undefined;
-        const companyPalette =
-          (hasCompany && companyPalettes[companyName!]) || {
-            bg: "linear-gradient(135deg, var(--surface-highlight), var(--accent-soft))",
-            color: "var(--text-primary)",
-          };
-        const companyInitials = hasCompany ? getCompanyInitials(companyName!) : "";
+        const companyPalette = (hasCompany &&
+          companyPalettes[companyName!]) || {
+          bg: "linear-gradient(135deg, var(--surface-highlight), var(--accent-soft))",
+          color: "var(--text-primary)",
+        };
+        const companyInitials = hasCompany
+          ? getCompanyInitials(companyName!)
+          : "";
 
         return (
           <li

@@ -1,4 +1,7 @@
 import type { ReactNode } from "react";
+import blackGirlsCodeLogo from "../assets/black_girls_code_logo.jpeg";
+import coolGirlsLogo from "../assets/cool_girls_inc__logo.jpeg";
+import colorwaveLogo from "../assets/thecolorwave_logo.jpeg";
 
 export type Project = {
   title: string;
@@ -32,8 +35,11 @@ export type CommunityItem = {
   organization: string;
   timeframe: string;
   summary: string;
-  highlights?: string[];
   link?: string;
+  logo?: {
+    src: string;
+    alt: string;
+  };
 };
 
 export const projects: Project[] = [
@@ -68,6 +74,10 @@ export const community: CommunityItem[] = [
     summary:
       "Closing the racial wealth gap by connecting underrepresented talent with opportunities across the innovation economy.",
     link: "https://www.thecolorwave.org/",
+    logo: {
+      src: colorwaveLogo,
+      alt: "Colorwave logo",
+    },
   },
   {
     title: "Black Girls Code",
@@ -77,6 +87,10 @@ export const community: CommunityItem[] = [
     summary:
       "Inspiring future technologists through playful storytelling workshops grounded in art, music, and code.",
     link: "https://www.blackgirlscode.com/",
+    logo: {
+      src: blackGirlsCodeLogo,
+      alt: "Black Girls Code logo",
+    },
   },
   {
     title: "Cool Girls",
@@ -86,6 +100,10 @@ export const community: CommunityItem[] = [
     summary:
       "Supporting middle school girls through mentorship, workshop facilitation, and confidence-building activities.",
     link: "https://thecoolgirls.org/",
+    logo: {
+      src: coolGirlsLogo,
+      alt: "Cool Girls, Inc. logo",
+    },
   },
 ];
 

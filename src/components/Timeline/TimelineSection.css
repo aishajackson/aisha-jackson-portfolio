@@ -1,0 +1,133 @@
+.timeline {
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 1.8rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.65rem;
+  top: 0.2rem;
+  bottom: 0.2rem;
+  width: 3px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--accent-soft) 0%, transparent 100%);
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -1.18rem;
+  top: 0.35rem;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 8px rgba(var(--accent-rgb), 0.2);
+}
+
+.timeline-content {
+  padding: 1.4rem 1.6rem;
+  border-radius: 18px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--surface-border);
+  box-shadow: var(--shadow-soft);
+  display: grid;
+  gap: 0.6rem;
+}
+
+.timeline-year {
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-strong);
+}
+
+.timeline-content h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+}
+
+.timeline-subtitle {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.timeline-subtitle-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  color: var(--accent-strong);
+  background: var(--surface-chip);
+  border: 1px solid var(--surface-border-soft);
+}
+
+.timeline-content p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.timeline-role {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.timeline-company-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+  background: var(--surface-elevated);
+}
+
+.timeline-company-icon.has-image {
+  padding: 0;
+  background: var(--surface-elevated);
+}
+
+.timeline-company-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.timeline-company-name {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 680px) {
+  .timeline {
+    padding-left: 1.4rem;
+  }
+}

@@ -22,12 +22,12 @@ pnpm run dev      # starts Vite on http://localhost:5173
 
 ### Useful Commands
 
-| Command        | Description                                     |
-| -------------- | ----------------------------------------------- |
-| `pnpm run dev` | Start local dev server with HMR                 |
-| `pnpm run build` | Type-check + bundle to `dist/`                 |
-| `pnpm run preview` | Serve the production build locally            |
-| `pnpm run lint` | Run ESLint with the shared config               |
+| Command            | Description                        |
+| ------------------ | ---------------------------------- |
+| `pnpm run dev`     | Start local dev server with HMR    |
+| `pnpm run build`   | Type-check + bundle to `dist/`     |
+| `pnpm run preview` | Serve the production build locally |
+| `pnpm run lint`    | Run ESLint with the shared config  |
 
 ## Project Structure
 
@@ -41,12 +41,6 @@ src/
 ```
 
 All data (projects, community work, socials, timeline) lives in `src/data/content.tsx`. Components import from that file, so you can update content or add new sections without touching the UI logic.
-
-## Customization Tips
-
-- **Add projects:** append to `projects` in `content.tsx`; each card renders automatically.
-- **Highlight tech in timeline:** `timeline` descriptions accept React fragments, so wrap text in `<strong>` or add links.
-- **Logos/icons:** drop assets into `src/assets/` and map them in the relevant component (e.g., `TimelineSection`, `CommunitySection`).
 
 ## Deployment
 

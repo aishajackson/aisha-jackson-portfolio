@@ -1,0 +1,72 @@
+.contact {
+  position: relative;
+}
+
+.contact-card {
+  position: relative;
+  display: grid;
+  gap: 1.6rem;
+  padding: clamp(2rem, 6vw, 2.6rem);
+  border-radius: 28px;
+  background: linear-gradient(
+    135deg,
+    var(--surface-highlight) 0%,
+    var(--accent-soft) 100%
+  );
+  border: 1px solid var(--surface-border-strong);
+  box-shadow: var(--shadow-medium);
+}
+
+.contact-card h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--text-primary);
+}
+
+.contact-card p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.contact-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.9rem;
+}
+
+.contact-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 20px;
+  border: 1px solid var(--surface-border);
+  background: var(--surface-elevated);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.contact-icon:hover,
+.contact-icon:focus-visible {
+  transform: translateY(-3px);
+  color: var(--accent-strong);
+  border-color: var(--accent-strong);
+  box-shadow: var(--shadow-soft);
+}
+
+.contact-icon-graphic {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+}
+
+.contact-icon svg {
+  width: 100%;
+  height: 100%;
+}

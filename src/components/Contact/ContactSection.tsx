@@ -1,4 +1,5 @@
-import type { SocialLink } from "../data/content";
+import type { SocialLink } from "../../data/content";
+import "./ContactSection.css";
 
 type ContactSectionProps = {
   socials: SocialLink[];

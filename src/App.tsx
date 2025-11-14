@@ -1,8 +1,8 @@
-import Hero from "./components/Hero";
-import ContactSection from "./components/ContactSection";
-import TimelineSection from "./components/TimelineSection";
-import ProjectsSection from "./components/ProjectsSection";
-import CommunitySection from "./components/CommunitySection";
+import Hero from "./components/Hero/Hero";
+import ContactSection from "./components/Contact/ContactSection";
+import TimelineSection from "./components/Timeline/TimelineSection";
+import ProjectsSection from "./components/Projects/ProjectsSection";
+import CommunitySection from "./components/Community/CommunitySection";
 import { community, projects, timeline, socials } from "./data/content";
 import headshot from "./assets/headshot.jpg";
 import "./App.css";
