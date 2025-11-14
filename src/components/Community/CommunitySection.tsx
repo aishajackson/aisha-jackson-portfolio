@@ -1,32 +1,8 @@
-import blackGirlsCodeLogo from "../assets/black_girls_code_logo.jpeg";
-import coolGirlsLogo from "../assets/cool_girls_inc__logo.jpeg";
-import colorwaveLogo from "../assets/thecolorwave_logo.jpeg";
-import type { CommunityItem } from "../data/content";
+import type { CommunityItem } from "../../data/content";
 import "./CommunitySection.css";
 
 type CommunitySectionProps = {
   community: CommunityItem[];
-};
-
-const organizationLogos: Record<
-  string,
-  {
-    src: string;
-    alt: string;
-  }
-> = {
-  Colorwave: {
-    src: colorwaveLogo,
-    alt: "Colorwave logo",
-  },
-  "Black Girls Code": {
-    src: blackGirlsCodeLogo,
-    alt: "Black Girls Code logo",
-  },
-  "Cool Girls, Inc.": {
-    src: coolGirlsLogo,
-    alt: "Cool Girls, Inc. logo",
-  },
 };
 
 const CommunitySection = ({ community }: CommunitySectionProps) => (
@@ -40,7 +16,7 @@ const CommunitySection = ({ community }: CommunitySectionProps) => (
     </div>
     <div className="community-grid">
       {community.map((item, index) => {
-        const logo = organizationLogos[item.organization];
+        const logo = item.logo;
 
         return (
           <article

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import type { Project } from "../data/content";
+import type { Project } from "../../data/content";
 import "./ProjectsSection.css";
 
 type ProjectsSectionProps = {
