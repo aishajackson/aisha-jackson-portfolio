@@ -44,6 +44,13 @@ export type CommunityItem = {
 
 export const projects: Project[] = [
   {
+    title: "Savvix AI National SMB Benchmarking Initiative",
+    description:
+      "Built a benchmarking platform that helps $1M–$20M businesses assess SaaS visibility and operating patterns. Features a 3–5 minute anonymized survey, personalized Savvix Spend Clarity Score™, peer benchmarking insights, and a live dashboard that updates as participation grows.",
+    link: "https://benchmark.savvix.ai/",
+    tags: ["React", "Vite", "Recharts", "Vercel", "Supabase"],
+  },
+  {
     title: "ATL Food Resources",
     description:
       "Contributing to an Atlanta website supporting access to free food resources after the end of SNAP benefits, adding new listings and improving data validation and UI flows.",
